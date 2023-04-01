@@ -1,0 +1,63 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+}
+
+img {
+    height: 100%;
+}
+
+.shop-content {
+    margin: 5px;
+}
+
+.item-hor {
+    display: flex;
+    max-width: 100%;
+    padding: 5px;
+    height: 400px;
+}
+
+.item-hor:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+.image {
+    text-align: center;
+    width: 30%;
+}
+
+.item-name {
+    width: 50%;
+    padding: 20px 10px;
+}
+
+.item-price {
+    width: 20%;
+}
+
+.price {
+    height: 50%;
+    font-size: 24pt;
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.cart {
+    height: 50%;
+}
+
+.button-cart {
+    position: relative;
+    left: 15%;
+    top: 15%;
+    width: 75%;
+    height: 20%;
+    font-size: 14pt;
+}
