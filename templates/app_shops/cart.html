@@ -1,0 +1,56 @@
+{% extends "app_shops/base_personal.html" %}
+{% load i18n %}
+
+{% block title %}
+    {{ block.super }} -
+    {% trans "заказы"|capfirst %}
+{% endblock title%}
+
+{% block center_panel %}
+    {% if not order_list %}
+        <h3>{% trans "корзина пуста"|capfirst %}</h3>
+    {% else %}
+        <h3>{% trans "корзина"|capfirst %}</h3>
+
+        {% for order in order_list %}
+        <div class="item-hor">
+            <div class="check">
+                <input class="checkbox" type="checkbox" name="item"
+                       value="{{ order.item.id }}" checked="checked">
+            </div>
+            <div class="image">
+                <img src="/media/{{ order.item.files.first.file }}" alt="logo">
+            </div>
+            <div class="item-name">
+                <a href="{% url 'detail_item' order.item.id %}">{{ order.item.name }}</a>
+            </div>
+            <div class="item-price">
+                <div class="counter">
+                    <p><input type="number" size="10" name="num" min="1"
+                              max="{{order.item.amount}}" value="{{order.quantity}}"></p>
+                </div>
+                <div class="price">
+                    {{ order.item.price }} ₽
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    {% endif %}
+{% endblock center_panel %}
+
+{% block right_panel %}
+    <h3>{% trans "ваша корзина"|capfirst %}</h3>
+    <p><b>{% trans "количество товаров"|capfirst %}:</b> {{ order_list|length }}</p>
+    <p><b>{% trans "общая стоимость"|capfirst %}:</b> {{ total_cost }} ₽</p>
+    <br>
+    <button class="buy_button clear_cart" type="submit" name="button" value="clean">
+        {% trans "очистить корзину"|capfirst %}
+    </button>
+    <br><br>
+    <button class="buy_button" type="submit" name="button" value="order">
+        {% trans "оформить заказ"|capfirst %}
+    </button>
+{% endblock right_panel %}
+
+{% block footer %}
+{% endblock footer %}

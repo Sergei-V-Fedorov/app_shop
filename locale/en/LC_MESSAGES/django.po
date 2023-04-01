@@ -1,0 +1,573 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-13 07:23+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: app_shops/admin.py:11 app_shops/models.py:14 app_shops/models.py:23
+msgid "магазин"
+msgstr "shop"
+
+#: app_shops/admin.py:12 app_shops/apps.py:8 app_shops/models.py:15
+msgid "магазины"
+msgstr "shops"
+
+#: app_shops/admin.py:19 app_shops/models.py:34 app_shops/models.py:43
+#: app_shops/models.py:53 app_shops/models.py:97
+msgid "товар"
+msgstr "item"
+
+#: app_shops/admin.py:20 app_shops/models.py:33
+#: templates/app_shops/detail_shop.html:6
+msgid "товары"
+msgstr "items"
+
+#: app_shops/admin.py:27 app_shops/models.py:44 app_shops/models.py:47
+msgid "файл"
+msgstr "file"
+
+#: app_shops/admin.py:28 app_shops/forms.py:10 app_shops/models.py:48
+msgid "файлы"
+msgstr "files"
+
+#: app_shops/admin.py:36 app_shops/models.py:89
+#: templates/app_shops/view_items_in_order.html:13
+msgid "заказ"
+msgstr "order"
+
+#: app_shops/admin.py:37 app_shops/models.py:88 templates/app_shops/cart.html:6
+msgid "заказы"
+msgstr "orders"
+
+#: app_shops/admin.py:44 app_shops/admin.py:45 app_shops/models.py:59
+#: app_shops/models.py:60 templates/app_shops/base_personal.html:23
+#: templates/app_shops/cart.html:13
+msgid "корзина"
+msgstr "cart"
+
+#: app_shops/admin.py:52 app_shops/models.py:104
+msgid "заказанные товары"
+msgstr "ordered items"
+
+#: app_shops/admin.py:53 app_shops/models.py:105
+msgid "заказанный товар"
+msgstr "ordered item"
+
+#: app_shops/forms.py:19
+msgid "выбрать файл"
+msgstr "select the file"
+
+#: app_shops/forms.py:24 app_shops/forms.py:25
+msgid "ГГГГ-ММ-ДД"
+msgstr "YYY-MM-DD"
+
+#: app_shops/forms.py:33
+msgid "последняя дата не должна быть меньше первой"
+msgstr "the end date should not be less than the start date"
+
+#: app_shops/models.py:8 app_users/models.py:10
+#: templates/app_users/profile.html:13
+msgid "продавец"
+msgstr "seller"
+
+#: app_shops/models.py:9
+msgid "название"
+msgstr "name"
+
+#: app_shops/models.py:10
+msgid "теги"
+msgstr "tags"
+
+#: app_shops/models.py:11
+msgid "логотип"
+msgstr "logo"
+
+#: app_shops/models.py:24
+msgid "артикул"
+msgstr "code"
+
+#: app_shops/models.py:25
+msgid "наименование товара"
+msgstr "item name"
+
+#: app_shops/models.py:26
+msgid "описание товара"
+msgstr "item description"
+
+#: app_shops/models.py:27 templates/app_shops/detail_shop.html:16
+msgid "цена"
+msgstr "price"
+
+#: app_shops/models.py:28 app_shops/models.py:54 app_shops/models.py:98
+#: templates/app_shops/detail_shop.html:17
+#: templates/app_shops/view_items_in_order.html:24
+msgid "количество"
+msgstr "quantity"
+
+#: app_shops/models.py:29
+msgid "акция"
+msgstr "promotion"
+
+#: app_shops/models.py:30
+msgid "специальное предложение"
+msgstr "special offer"
+
+#: app_shops/models.py:56 app_shops/models.py:82 app_shops/models.py:100
+msgid "покупатель"
+msgstr "buyer"
+
+#: app_shops/models.py:75
+msgid "куплено"
+msgstr "purchased"
+
+#: app_shops/models.py:75
+msgid "оформлено"
+msgstr "placed"
+
+#: app_shops/models.py:77
+msgid "код заказа"
+msgstr "order code"
+
+#: app_shops/models.py:78
+msgid "дата создания"
+msgstr "creation date"
+
+#: app_shops/models.py:79
+msgid "статус заказа"
+msgstr "order status"
+
+#: app_shops/models.py:95 templates/app_shops/order_history.html:19
+msgid "номер заказа"
+msgstr "order code"
+
+#: app_shops/models.py:101
+msgid "общая сумма"
+msgstr "total amount"
+
+#: app_shops/views.py:282
+msgid "платеж успешно проведен"
+msgstr "the payment was successfully completed"
+
+#: app_users/apps.py:9
+msgid "пользователи"
+msgstr "users"
+
+#: app_users/forms.py:9 app_users/forms.py:23
+#: templates/app_users/profile.html:11
+msgid "имя"
+msgstr "first name"
+
+#: app_users/forms.py:10 app_users/forms.py:24
+#: templates/app_users/profile.html:12
+msgid "фамилия"
+msgstr "last name"
+
+#: app_users/forms.py:18
+msgid "логин"
+msgstr "login"
+
+#: app_users/forms.py:19
+msgid "пароль"
+msgstr "password"
+
+#: app_users/models.py:8 templates/app_users/profile.html:10
+msgid "пользователь"
+msgstr "user"
+
+#: app_users/models.py:9 templates/app_users/profile.html:19
+msgid "дата регистрации"
+msgstr "registration date"
+
+#: app_users/models.py:11 templates/app_users/profile.html:20
+msgid "аватар"
+msgstr "avatar"
+
+#: app_users/models.py:12
+msgid "доступные средства"
+msgstr "available funds"
+
+#: app_users/models.py:17 templates/base_template.html:41
+msgid "профиль"
+msgstr "profile"
+
+#: app_users/models.py:18
+msgid "профили"
+msgstr "profiles"
+
+#: app_users/models.py:26
+msgid "начинающий покупатель"
+msgstr "novice buyer"
+
+#: app_users/models.py:28
+msgid "опытный покупатель"
+msgstr "experienced buyer"
+
+#: app_users/models.py:30
+msgid "постоянный покупатель"
+msgstr "regular buyer"
+
+#: app_users/models.py:32
+msgid "преданный покупатель"
+msgstr "loyal buyer"
+
+#: app_users/models.py:34
+msgid "привилегированный покупатель"
+msgstr "privileged buyer"
+
+#: templates/app_shops/base_personal.html:17 templates/base_template.html:43
+msgid "личный кабинет"
+msgstr "personal account"
+
+#: templates/app_shops/base_personal.html:18
+msgid "баланс средств"
+msgstr "balance of funds"
+
+#: templates/app_shops/base_personal.html:21
+msgid "пополнить счет"
+msgstr "replenish the funds"
+
+#: templates/app_shops/base_personal.html:25
+#: templates/app_shops/order_history.html:7
+#: templates/app_shops/order_history.html:16
+msgid "история заказов"
+msgstr "order history"
+
+#: templates/app_shops/cart.html:11
+msgid "корзина пуста"
+msgstr "the cart is empty"
+
+#: templates/app_shops/cart.html:42
+msgid "ваша корзина"
+msgstr "your cart"
+
+#: templates/app_shops/cart.html:43
+msgid "количество товаров"
+msgstr "item quantity"
+
+#: templates/app_shops/cart.html:44
+#: templates/app_shops/view_items_in_order.html:36
+msgid "общая стоимость"
+msgstr "total cost"
+
+#: templates/app_shops/cart.html:47
+msgid "очистить корзину"
+msgstr "empty the cart"
+
+#: templates/app_shops/cart.html:51
+msgid "оформить заказ"
+msgstr "place an order"
+
+#: templates/app_shops/create_item.html:6
+msgid "добавление товара"
+msgstr "adding an item"
+
+#: templates/app_shops/create_item.html:11
+msgid "добавление нового товара"
+msgstr "adding a new item"
+
+#: templates/app_shops/create_item.html:14
+msgid "добавить"
+msgstr "add"
+
+#: templates/app_shops/create_shop.html:6
+msgid "cоздание магазина"
+msgstr "creating a shop"
+
+#: templates/app_shops/create_shop.html:11
+msgid "cоздание нового магазина"
+msgstr "creating a new shop"
+
+#: templates/app_shops/create_shop.html:14
+msgid "cоздать"
+msgstr "create"
+
+#: templates/app_shops/detail_item.html:6
+#: templates/app_shops/view_items_in_shop.html:6
+#: templates/app_shops/view_items_in_shop.html:15
+#: templates/app_shops/view_offers.html:6
+#: templates/app_shops/view_offers.html:15
+#: templates/app_shops/view_promotions.html:6
+#: templates/app_shops/view_promotions.html:15
+msgid "список товаров"
+msgstr "list of items"
+
+#: templates/app_shops/detail_item.html:28
+msgid "остаток товаров"
+msgstr "remaining items"
+
+#: templates/app_shops/detail_item.html:37
+#: templates/app_shops/view_items_in_shop.html:32
+#: templates/app_shops/view_offers.html:32
+#: templates/app_shops/view_promotions.html:32
+msgid "в корзину"
+msgstr "into cart"
+
+#: templates/app_shops/detail_shop.html:12
+msgid "товары, доступные в магазине"
+msgstr "items available in the store"
+
+#: templates/app_shops/detail_shop.html:18
+#: templates/app_shops/edit_item.html:14 templates/app_shops/edit_shop.html:14
+#: templates/app_shops/view_shoplist.html:15
+#: templates/app_users/profile_edit.html:13
+msgid "редактировать"
+msgstr "edit"
+
+#: templates/app_shops/detail_shop.html:23
+msgid "в магазине нет товаров"
+msgstr "there are no products in the shop"
+
+#: templates/app_shops/detail_shop.html:26
+msgid "создать новый товар"
+msgstr "create a new item"
+
+#: templates/app_shops/detail_shop.html:27
+msgid "загрузить из файла"
+msgstr "upload from file"
+
+#: templates/app_shops/edit_item.html:6 templates/app_shops/edit_item.html:11
+msgid "редактирование товара"
+msgstr "editing an item"
+
+#: templates/app_shops/edit_shop.html:6 templates/app_shops/edit_shop.html:11
+msgid "редактирование магазина"
+msgstr "editing a shop"
+
+#: templates/app_shops/home_page.html:5 templates/app_shops/home_page_2.html:5
+msgid "домашняя страница"
+msgstr "home page"
+
+#: templates/app_shops/home_page.html:23
+msgid "не найдено активных магазинов"
+msgstr "no active stores found"
+
+#: templates/app_shops/home_page.html:30
+#: templates/app_shops/home_page_2.html:36
+#, python-format
+msgid ""
+"\n"
+"            %(page)s %(number)s из %(num_pages)s\n"
+"            "
+msgstr ""
+"\n"
+"            %(page)s %(number)s from %(num_pages)s\n"
+"            "
+
+#: templates/app_shops/home_page.html:39
+#: templates/app_shops/home_page_2.html:45
+msgid "первая"
+msgstr "first"
+
+#: templates/app_shops/home_page.html:41
+#: templates/app_shops/home_page_2.html:47
+msgid "предыдущая"
+msgstr "previous"
+
+#: templates/app_shops/home_page.html:47
+#: templates/app_shops/home_page_2.html:53
+msgid "следующая"
+msgstr "next"
+
+#: templates/app_shops/home_page.html:50
+#: templates/app_shops/home_page_2.html:56
+msgid "последняя"
+msgstr "last"
+
+#: templates/app_shops/home_page_2.html:29
+#: templates/app_shops/statistics.html:38
+msgid "не найдено товаров"
+msgstr "there are no products in the shop"
+
+#: templates/app_shops/order_history.html:12
+msgid "нет сохраненных заказов"
+msgstr "no saved orders"
+
+#: templates/app_shops/order_history.html:20
+msgid "дата/время"
+msgstr "date/time"
+
+#: templates/app_shops/order_history.html:21
+msgid "статус"
+msgstr "status"
+
+#: templates/app_shops/order_history.html:31
+msgid "оплачен"
+msgstr "paid"
+
+#: templates/app_shops/order_history.html:33
+msgid "сформирован"
+msgstr "placed"
+
+#: templates/app_shops/replenish_funds.html:6
+msgid "пополнение счета"
+msgstr "replenishing the funds"
+
+#: templates/app_shops/replenish_funds.html:12
+msgid "пополнить"
+msgstr "replenish"
+
+#: templates/app_shops/statistics.html:5 templates/app_shops/statistics.html:9
+#: templates/app_shops/view_shoplist.html:16
+msgid "статистика продаж"
+msgstr "sales statistics"
+
+#: templates/app_shops/statistics.html:15
+msgid "код"
+msgstr "code"
+
+#: templates/app_shops/statistics.html:18
+msgid "наименование"
+msgstr "item name"
+
+#: templates/app_shops/statistics.html:21
+msgid "продано, шт"
+msgstr "sold, pcs"
+
+#: templates/app_shops/time_interval.html:6
+msgid "отчет по продажам"
+msgstr "sales report"
+
+#: templates/app_shops/time_interval.html:11
+msgid "укажите временной интервал"
+msgstr "specify the time interval"
+
+#: templates/app_shops/time_interval.html:14
+#: templates/app_users/register.html:13
+msgid "отправить"
+msgstr "send"
+
+#: templates/app_shops/upload_file.html:6
+msgid "загрузка товаров"
+msgstr "uploading the items"
+
+#: templates/app_shops/upload_file.html:13
+msgid "загрузить"
+msgstr "upload"
+
+#: templates/app_shops/view_items_in_order.html:6
+msgid "оплата заказа"
+msgstr "order payment"
+
+#: templates/app_shops/view_items_in_order.html:11
+msgid "нет выбранных товаров"
+msgstr "there are no selected items"
+
+#: templates/app_shops/view_items_in_order.html:40
+msgid "оплатить"
+msgstr "pay"
+
+#: templates/app_shops/view_items_in_shop.html:40
+#: templates/app_shops/view_offers.html:40
+#: templates/app_shops/view_promotions.html:40
+msgid "в магазине еще нет товаров"
+msgstr "there are no items in the shop"
+
+#: templates/app_shops/view_shoplist.html:6
+msgid "мои магазины"
+msgstr "my shops"
+
+#: templates/app_shops/view_shoplist.html:10
+msgid "список ваших магазинов"
+msgstr "list of your shops"
+
+#: templates/app_shops/view_shoplist.html:21
+msgid "у вас ещё нет магазинов"
+msgstr "you don't have any stores yet"
+
+#: templates/app_shops/view_shoplist.html:24
+msgid "создать новый магазин"
+msgstr "create a new shop"
+
+#: templates/app_users/login.html:6
+msgid "аутентификация"
+msgstr "authentication"
+
+#: templates/app_users/login.html:13
+msgid "войти"
+msgstr "sign in"
+
+#: templates/app_users/profile.html:6
+msgid "профиль пользователя"
+msgstr "user profile"
+
+#: templates/app_users/profile.html:15
+msgid "да"
+msgstr "yes"
+
+#: templates/app_users/profile.html:17
+msgid "нет"
+msgstr "no"
+
+#: templates/app_users/profile.html:21
+msgid "количество покупок"
+msgstr "number of purchases"
+
+#: templates/app_users/profile.html:22
+msgid "статус покупателя"
+msgstr "buyer status"
+
+#: templates/app_users/profile.html:24
+msgid "редактировать профиль"
+msgstr "edit the profile"
+
+#: templates/app_users/profile_edit.html:6
+msgid "редактирование профиля пользователя"
+msgstr "editing an user profile"
+
+#: templates/app_users/register.html:6 templates/base_template.html:50
+msgid "регистрация"
+msgstr "registration"
+
+#: templates/base_template.html:8
+msgid "интернет магазин"
+msgstr "internet shop"
+
+#: templates/base_template.html:37
+msgid "здравствуй"
+msgstr "hello"
+
+#: templates/base_template.html:45
+msgid "выход"
+msgstr "logout"
+
+#: templates/base_template.html:48
+msgid "гость"
+msgstr "guest"
+
+#: templates/base_template.html:49
+msgid "вход"
+msgstr "sigh in"
+
+#: templates/base_template.html:57
+msgid "главная"
+msgstr "home"
+
+#: templates/base_template.html:58
+msgid "список магазинов"
+msgstr "list of your shops"
+
+#: templates/base_template.html:59
+msgid "акции"
+msgstr "promotion"
+
+#: templates/base_template.html:60
+msgid "специальные предложения"
+msgstr "special offers"
+
+#: templates/base_template.html:62
+msgid "управление магазинами"
+msgstr "shop management"

@@ -1,0 +1,32 @@
+{% extends "base_template.html" %}
+{% load i18n %}
+
+{% block title %}
+    {{ block.super }} - {% trans "домашняя страница"|capfirst %}
+{% endblock title %}
+
+{% block content %}
+    <br>
+    {% if item_list %}
+        <table width="95%">
+            <tr>
+                <td width="80%"> </td>
+                <td width="20%"> </td>
+            </tr>
+        {% for item in item_list %}
+            <tbody>
+            <tr>
+            <td height="60em"><a href="{% url 'detail_item' item.id %}">
+                {{ item.name }}</a>
+            </td>
+            <td><a href="{% url 'items_in_shop' item.shop_id %}">{{ item.shop.name }}</a></td>
+            </tr>
+            </tbody>
+        {% endfor %}
+        </table>
+
+    {% else %}
+        {% trans "не найдено товаров"|capfirst %}
+    {% endif %}
+{% endblock content %}
+

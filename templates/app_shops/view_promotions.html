@@ -1,0 +1,42 @@
+{% extends "base_template.html" %}
+{% load i18n %}
+
+{% block title %}
+    {{ block.super }} -
+    {% trans "список товаров"|capfirst %}
+{% endblock title%}
+
+{% block css %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'items_horizontal.css' %}">
+{% endblock css %}
+
+{% block content %}
+    <h2>{% trans "список товаров"|capfirst %}:</h2>
+    {% if page_obj %}
+        <form method="post"> {% csrf_token %}
+        {% for item in page_obj %}
+            <div class="item-hor">
+                <div class="image">
+                    <img src="/media/{{ item.file }}" alt="logo">
+                </div>
+                <div class="item-name">
+                    <a href="{% url 'detail_item' item.item_id %}">{{ item.item_name }}</a>
+                </div>
+                <div class="item-price">
+                    <div class="price">
+                        {{ item.item_price }} ₽
+                    </div>
+                    <div class="cart">
+                        <button class="button-cart" type="submit" name="add" value="{{ item.item_id }}">
+                            {% trans "в корзину"|capfirst %}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </form>
+    {% else %}
+        {% trans "в магазине еще нет товаров"|capfirst %}
+    {% endif %}
+{% endblock content%}

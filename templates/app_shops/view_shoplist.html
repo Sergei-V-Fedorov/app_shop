@@ -1,0 +1,28 @@
+{% extends "base_template.html" %}
+{% load i18n %}
+
+{% block title %}
+    {{ block.super }} -
+    {% trans "мои магазины"|capfirst %}
+{% endblock title%}
+
+{% block content %}
+    <h2>{% trans "список ваших магазинов"|capfirst %}:</h2>
+    {% if shop_list %}
+        <ul>
+        {% for shop in shop_list %}
+            <li><a href="{% url 'detail_shop' shop.id %}">{{ shop.name }}</a> |
+                <a href="{% url 'edit_shop' shop.id %}">{% trans "редактировать"|capfirst %}</a> |
+                <a href="{% url 'statistics' shop.id %}">{% trans "статистика продаж"|capfirst %}</a>
+                <p><img src="/media/{{ shop.logo }}" alt="shop_logo" width="150px" ></p> </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        {% trans "у вас ещё нет магазинов"|capfirst %}
+    {% endif %}
+    <br><br>
+    <p><a href="{% url 'create_shop' %}">{% trans "создать новый магазин"|capfirst %}</a></p>
+{% endblock content%}
+
+{% block footer%}
+{% endblock footer%}

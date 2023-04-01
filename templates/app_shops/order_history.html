@@ -1,0 +1,46 @@
+{% extends "app_shops/base_personal.html" %}
+{% load i18n %}
+{% load cache %}
+
+{% block title %}
+    {{ block.super }} -
+    {% trans "история заказов"|capfirst %}
+{% endblock title%}
+
+{% block center_panel %}
+    {% if not item_list %}
+        <h3>{% trans "нет сохраненных заказов"|capfirst %}</h3>
+    {% else %}
+        {% cache 500 history %}
+        <table border="1" width="96%">
+            <caption>{% trans "история заказов"|capfirst %}</caption>
+            <thead>
+            <tr>
+                <td width="35%">{% trans "номер заказа"|capfirst %}</td>
+                <td width="33%">{% trans "дата/время"|capfirst %}</td>
+                <td width="32%">{% trans "статус"|capfirst %}</td>
+            </tr>
+            </thead>
+            <tbody>
+            {% for item in item_list %}
+            <tr>
+                <td><a href="{% url 'order' item.code %}">{{ item.code }}</a></td>
+                <td>{{ item.created }}</td>
+                <td>
+                    {% if item.status == 'b' %}
+                        {% trans "оплачен"|capfirst %}
+                    {% elif item.status == 'o' %}
+                        {% trans "сформирован"|capfirst %}
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        {% endcache %}
+    {% endif %}
+{% endblock center_panel %}
+
+{% block right_panel %}
+{% endblock right_panel %}
+

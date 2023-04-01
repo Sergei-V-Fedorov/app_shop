@@ -1,0 +1,18 @@
+{% extends "base_template.html" %}
+{% load i18n %}
+
+{% block title %}
+    {{ block.super }} -
+    {% trans "загрузка товаров"|capfirst %}
+{% endblock title%}
+
+{% block content %}
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">{% trans "загрузить"|capfirst %}</button>
+</form>
+{% endblock content %}
+
+{% block footer%}
+{% endblock footer%}

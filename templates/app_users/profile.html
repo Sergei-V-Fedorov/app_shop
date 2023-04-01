@@ -1,0 +1,25 @@
+{% extends "base_template.html" %}
+{% load i18n %}
+
+{% block title %}
+    {{ block.super }} -
+    {% trans "профиль пользователя"|capfirst %}
+{% endblock title%}
+
+{% block content %}
+    <p><b>{% trans "пользователь"|capfirst %}:</b> {{ user.username }} </p>
+    <p><b>{% trans "имя"|capfirst %}:</b> {{ user.first_name }} </p>
+    <p><b>{% trans "фамилия"|capfirst %}:</b> {{ user.last_name }} </p>
+    <p><b>{% trans "продавец"|capfirst %}:</b>
+        {% if user.profiles.is_seller %}
+            {% trans "да"|capfirst %}
+        {% else%}
+            {% trans "нет"|capfirst %}
+        {% endif %}</p>
+    <p><b>{% trans "дата регистрации"|capfirst %}:</b> {{ user.profiles.registration_date }} </p>
+    <p><b>{% trans "аватар"|capfirst %}:</b> {{ user.profiles.avatar }} </p>
+    <p><b>{% trans "количество покупок"|capfirst %}:</b> {{ user.profiles.purchases }} </p>
+    <p><b>{% trans "статус покупателя"|capfirst %}:</b> {{ user.profiles.buyer_status }} </p>
+    <a href="{% url 'profile_edit' user.profiles.id %}">
+        {% trans "редактировать профиль"|capfirst %}</a>
+{% endblock content%}

@@ -1,0 +1,27 @@
+{% extends "base_template.html" %}
+{% load i18n %}
+
+{% block title %}
+    {{ block.super }} - {% trans "домашняя страница"|capfirst %}
+{% endblock title %}
+
+{% block content %}
+    {% if shop_list %}
+        {% for shop in shop_list %}
+            <br>
+            <figure>
+                <p><img src="/media/{{ shop.logo }}" width=200 alt="img_{{forloop.counter}}"></p>
+                <figcapture>
+                    <a href="{% url 'items_in_shop' shop.id %}">{{ shop.name }}</a>
+                    <p>{{ shop.tags }}</p>
+                </figcapture>
+            </figure>
+        {% endfor %}
+
+
+    {% else %}
+        {% trans "не найдено активных магазинов"|capfirst %}
+    {% endif %}
+
+{% endblock content %}
+

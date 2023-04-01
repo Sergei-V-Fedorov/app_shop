@@ -1,0 +1,46 @@
+{% extends "app_shops/base_personal.html" %}
+{% load i18n %}
+
+{% block title %}
+    {{ block.super }} -
+    {% trans "оплата заказа"|capfirst %}
+{% endblock title%}
+
+{% block center_panel %}
+    {% if not item_list %}
+        <h3>{% trans "нет выбранных товаров"|capfirst %}</h3>
+    {% else %}
+        <h3>{% trans "заказ"|capfirst %} {{ order.code }} </h3>
+        {% for item in item_list %}
+            <div class="item-hor">
+                <div class="image">
+                    <img src="/media/{{ item.item.files.first.file }}" alt="logo">
+                </div>
+                <div class="item-name">
+                    <a href="{% url 'detail_item' item.item.id %}">{{ item.item.name }}</a>
+                </div>
+                <div class="item-price">
+                    <div class="counter">
+                    <p><b>{% trans "количество"|capfirst %}:</b> {{ item.quantity }}</p>
+                    </div>
+                    <div class="price">
+                        {{ item.item.price }} ₽
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endblock center_panel %}
+
+{% block right_panel %}
+    <p><b>{% trans "общая стоимость"|capfirst %}:</b> {{ total_cost }} ₽</p>
+    <br><br>
+    {% if order.status == 'o' %}
+    <button class="buy_button clear_cart" type="submit" name="button" value="payment">
+        {% trans "оплатить"|capfirst %}
+    </button>
+    {% endif %}
+{% endblock right_panel %}
+
+{% block footer%}
+{% endblock footer%}

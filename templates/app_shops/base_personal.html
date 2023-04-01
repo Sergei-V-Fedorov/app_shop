@@ -1,0 +1,44 @@
+{% extends "base_template.html" %}
+{% load i18n %}
+
+{% block css %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'items_horizontal.css' %}">
+    <link rel="stylesheet" href="{% static 'cart.css' %}">
+{% endblock css %}
+
+{% block content %}
+    <form method="post"> {% csrf_token %}
+
+    <div class="shop_content">
+
+        <div class="left_panel">
+        {% block left_pannel %}
+            <h3>{% trans "личный кабинет"|capfirst %}</h3>
+            <p><b>{% trans "баланс средств"|capfirst %}: </b>
+                {{ user.profiles.funds }} <b>₽</b></p>
+            <p><a href="{% url 'replenish_funds' user.profiles.id %}">
+                {% trans "пополнить счет"|capfirst %}</a></p>
+            <p><a href="{% url 'cart' %}">
+                {% trans "корзина"|capfirst %}</a></p>
+            <p><a href="{% url 'order_history' user.id %}">
+                {% trans "история заказов"|capfirst %}</a></p>
+
+        {% endblock left_pannel %}
+        </div>
+
+        <div class="center_panel">
+        {% block center_panel %}
+        {% endblock center_panel %}
+        </div>
+
+        <div class="right_panel">
+        {% block right_panel %}
+        {% endblock right_panel %}
+        </div>
+
+    </div>
+    </form>
+
+{% endblock content%}
+

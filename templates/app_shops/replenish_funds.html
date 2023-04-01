@@ -1,0 +1,20 @@
+{% extends "app_shops/base_personal.html" %}
+{% load i18n %}
+
+{% block title %}
+    {{ block.super }} -
+    {% trans "пополнение счета"|capfirst %}
+{% endblock title%}
+
+{% block center_panel %}
+    {{ form.as_p }}
+    <button type="submit" name="button" value="funds">
+        {% trans "пополнить"|capfirst %}
+    </button>
+{% endblock center_panel %}
+
+{% block right_panel %}
+{% endblock right_panel %}
+
+{% block footer%}
+{% endblock footer%}

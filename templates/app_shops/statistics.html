@@ -1,0 +1,46 @@
+{% extends "base_template.html" %}
+{% load i18n %}
+
+{% block title %}
+    {{ block.super }} - {% trans "статистика продаж"|capfirst %}
+{% endblock title %}
+
+{% block content %}
+    <h2>{% trans "статистика продаж"|capfirst %}</h2>
+    <br>
+    {% if ordered_items %}
+        <table width="95%">
+            <tr>
+                <td width="10%">
+                    {% trans "код"|capfirst %}
+                </td>
+                <td width="80%">
+                    {% trans "наименование"|capfirst %}
+                </td>
+                <td width="10%">
+                    {% trans "продано, шт"|capfirst %}
+                </td>
+            </tr>
+        {% for key, value in ordered_items.items %}
+            <tbody>
+            <tr>
+            <td>{{ value.code }}</td>
+            <td height="60em"><a href="{% url 'detail_item' key %}">
+                {{ value.name }}</a>
+            </td>
+            <td>{{ value.quantity }}</td>
+            </tr>
+            </tbody>
+        {% endfor %}
+        </table>
+
+    {% else %}
+        {% trans "не найдено товаров"|capfirst %}
+    {% endif %}
+
+    </span>
+</div>
+{% endblock content %}
+
+{% block footer%}
+{% endblock footer%}

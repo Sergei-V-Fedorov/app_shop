@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+{% load i18n %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+     <title>
+         {% block title %}
+            {% trans "интернет магазин"|capfirst %}
+         {% endblock %}
+     </title>
+    {% block css %}
+    {% endblock css %}
+</head>
+<body>
+
+    <header>
+        {% block select_lang %}
+            <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+            <input name="next" type="hidden" value="{{ redirect_to }}">
+            <select name="language">
+                {% get_current_language as LANGUAGE_CODE %}
+                {% get_available_languages as LANGUAGES %}
+                {% get_language_info_list for LANGUAGES as languages %}
+                {% for language in languages %}
+                <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                    {{ language.name_local }} ({{ language.code }})
+                </option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Go">
+            </form>
+        {% endblock select_lang %}
+    </header>
+
+    <div id="userbar" align="right">
+        {% block userbar %}
+            {% trans "здравствуй"|capfirst %},
+            {% if user.is_authenticated %}
+                <b>{{ user.get_username }}</b> |
+                <a href="{% url 'profile' %}">
+                    {% trans "профиль"|capfirst %}</a> |
+                <a href="{% url 'cart' %}">
+                    {% trans "личный кабинет"|capfirst %}</a> |
+                <a href="{% url 'logout' %}">
+                    {% trans "выход"|capfirst %}</a>
+                <img src="#" width="50" height="50" alt="avatar">
+            {% else %}
+                <b>{% trans "гость"|capfirst %}</b> |
+                <a href="{% url 'login' %}">{% trans "вход"|capfirst %}</a> |
+                <a href="{% url 'register' %}">{% trans "регистрация"|capfirst %}</a>
+            {% endif %}
+        {% endblock userbar %}
+    </div>
+    <br>
+    <div id="menu">
+        {% block menu %}
+            <a href="{% url 'shops_home' %}">{% trans "главная"|capfirst %}</a> |
+            <a href="{% url 'shop_list' %}">{% trans "список магазинов"|capfirst %}</a> |
+            <a href="{% url 'promotions' %}">{% trans "акции"|capfirst %}</a> |
+            <a href="{% url 'offers' %}">{% trans "специальные предложения"|capfirst %}</a>
+            {% if perms.app_shops.change_shop and perms.app_shops.change_item %}|
+                <a href="{% url 'my_shop_list' %}">{% trans "управление магазинами"|capfirst %}</a>
+            {% endif %}
+        {% endblock menu%}
+    </div>
+    <br><br>
+    <div id="content">
+        {% block content %}
+        {% endblock content%}
+    </div>
+
+    {% block footer%}
+    <br><br>
+    <div class="pagination">
+
+        <span class="current">
+            {% blocktrans with page="страница"|capfirst number=page_obj.number num_pages=page_obj.paginator.num_pages %}
+            {{ page }} {{ number }} из {{ num_pages }}
+            {% endblocktrans %}
+        </span>
+        <p></p>
+
+        <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo;
+            {% trans "первая"|capfirst %}</a>
+            <a href="?page={{ page_obj.previous_page_number }}">
+                {% trans "предыдущая"|capfirst %}
+            </a>
+        {% endif %}
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">
+                {% trans "следующая"|capfirst %}
+            </a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">
+                {% trans "последняя"|capfirst %} &raquo;</a>
+        {% endif %}
+        </span>
+    </div>
+    {% endblock footer%}
+</body>
+</html>

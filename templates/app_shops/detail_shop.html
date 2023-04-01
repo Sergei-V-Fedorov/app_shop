@@ -1,0 +1,28 @@
+{% extends "base_template.html" %}
+{% load i18n %}
+
+{% block title %}
+    {{ block.super }} -
+    {% trans "товары"|capfirst %}
+{% endblock title%}
+
+{% block content %}
+    <h2>{{ shop.name }}</h2>
+    {% if item_list %}
+        <h4>{% trans "товары, доступные в магазине"|capfirst %}</h4>
+        <ul>
+        {% for item in item_list %}
+            <li><a href="{% url 'detail_item' item.id %}">{{ item.name }}</a> |
+                <span>{% trans "цена"|capfirst %}: {{ item.price }}</span> |
+                <span>{% trans "количество"|capfirst %}: {{ item.amount }}</span> |
+                <a href="{% url 'edit_item' item.id %}">{% trans "редактировать"|capfirst %}</a></li>
+                <br>
+        {% endfor %}
+        </ul>
+    {% else %}
+        {% trans "в магазине нет товаров"|capfirst %}
+    {% endif %}
+    <br><br>
+    <p><a href="{% url 'create_item' shop.id %}">{% trans "создать новый товар"|capfirst %}</a> |
+        <a href="{% url 'upload_item' shop.id %}">{% trans "загрузить из файла"|capfirst %}</a></p>
+{% endblock content%}
